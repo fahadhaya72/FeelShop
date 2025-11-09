@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FeelShop – Place Order</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="wrap">
+      <h1>FeelShop</h1>
+      <p>Place your order</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="order-info" id="orderInfo">
+      <div class="info-row">
+        <div>
+          <h2 id="shopName">Shop</h2>
+          <div id="shopAddress" class="muted"></div>
+        </div>
+        <a href="index.html" class="link">Change shop</a>
+      </div>
+      <div class="info-row">
+        <label class="label">Your detected address</label>
+        <input id="userAddress" type="text" class="input">
+      </div>
+    </section>
+
+    <form id="orderForm" class="card" enctype="multipart/form-data">
+      <div class="field">
+        <label class="label">Do you have an image of your list?</label>
+        <div>
+          <label style="margin-right:12px;">
+            <input type="radio" name="has_image" id="modeNo" value="no" checked>
+            No, I will type items
+          </label>
+          <label>
+            <input type="radio" name="has_image" id="modeYes" value="yes">
+            Yes, I will upload image
+          </label>
+        </div>
+      </div>
+      <div class="field" id="itemsField">
+        <label for="items" class="label">Grocery items</label>
+        <textarea id="items" name="items" class="textarea" placeholder="e.g., 2kg rice, 1L milk, 12 eggs" required></textarea>
+      </div>
+
+      <div class="field" id="imageField" style="display:none;">
+        <label for="image">Upload image (≤30 KB, JPG/PNG)</label>
+        <input id="image" name="image" type="file" class="input" accept="image/*">
+      </div>
+
+      <div class="field">
+        <label for="phone" class="label">Phone number</label>
+        <input id="phone" name="phone" class="input" type="tel" placeholder="Enter phone" required>
+      </div>
+
+      <div class="hint">We will call you to confirm your order. Home delivery is available for orders ≥ ₹500.</div>
+
+      <input type="hidden" name="shop_name" id="shop_name">
+      <input type="hidden" name="shop_email" id="shop_email">
+      <input type="hidden" name="shop_address" id="shop_address">
+      <input type="hidden" name="user_address" id="user_address_hidden">
+      <input type="hidden" name="user_lat" id="user_lat">
+      <input type="hidden" name="user_lng" id="user_lng">
+
+      <div class="actions">
+        <button type="submit" id="submitBtn" class="btn primary">Submit Order</button>
+        <span id="formStatus" class="muted"></span>
+      </div>
+    </form>
+  </main>
+
+  <footer class="app-footer">
+    <div class="wrap">
+      <small>© <span id="year"></span> FeelShop</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="order.js" defer></script>
+</body>
+</html>

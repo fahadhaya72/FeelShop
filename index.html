@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FeelShop – Find Nearby Grocery Shops</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="wrap">
+      <h1>FeelShop</h1>
+      <p>Multi-shop grocery ordering near you</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="location-bar" id="locationBar">
+      <span id="locationStatus">Detecting your location…</span>
+      <span id="userAddress" class="muted"></span>
+    </section>
+
+    <section class="map-section">
+      <div id="map" aria-label="Map showing your location and shops"></div>
+      <div id="mapLoader" class="loader show">Loading map…</div>
+    </section>
+
+    <section class="shops-section">
+      <h2>Nearby Shops</h2>
+      <div id="shopsContainer" class="shops-grid"></div>
+      <div id="shopsEmpty" class="muted hidden">No shops to show.</div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="wrap">
+      <small>© <span id="year"></span> FeelShop</small>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
