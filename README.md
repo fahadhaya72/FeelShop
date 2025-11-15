@@ -1,5 +1,8 @@
 # FreeShop – Multi-shop Grocery Ordering (Frontend-only)
 
+```
+webiste is live on : https://feel-shop.vercel.app/
+```
 A client-side web app to find nearby shops, view them on a map, and place orders directly by email.
 
 - Geolocation + Nominatim reverse geocoding
